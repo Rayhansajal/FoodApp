@@ -1,6 +1,10 @@
 package com.example.FoodApp.auth_users.entity;
 
 import com.example.FoodApp.cart.entity.Cart;
+import com.example.FoodApp.order.entity.Order;
+import com.example.FoodApp.payment.entity.Payment;
+import com.example.FoodApp.reviews.entity.Review;
+import com.example.FoodApp.role.entity.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -48,7 +52,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Payment> payments;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Cart cart;
 
     private LocalDateTime createdAt;

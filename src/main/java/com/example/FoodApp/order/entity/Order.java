@@ -3,6 +3,7 @@ package com.example.FoodApp.order.entity;
 import com.example.FoodApp.auth_users.entity.User;
 import com.example.FoodApp.enums.OrderStatus;
 import com.example.FoodApp.enums.PaymentStatus;
+import com.example.FoodApp.payment.entity.Payment;
 import com.stripe.model.InvoicePayment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -42,5 +43,5 @@ public class Order {
     private Payment payment;
 
     @OneToMany(mappedBy ="order", cascade = CascadeType.ALL)
-    private List<OrderItems> orderItems;
+    private List<OrderItem> orderItems;
 }

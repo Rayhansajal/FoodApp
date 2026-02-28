@@ -1,27 +1,23 @@
-package com.example.FoodApp.category.entity;
+package com.example.FoodApp.role.entity;
 
-import com.example.FoodApp.menu.entity.Menu;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "categories")
-public class Category {
+@Table(name = "roles")
+public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(unique = true)
     private String name;
-    private String description;
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<Menu> menus;
 }

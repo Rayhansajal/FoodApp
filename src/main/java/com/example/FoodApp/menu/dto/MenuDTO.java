@@ -1,5 +1,6 @@
 package com.example.FoodApp.menu.dto;
 
+import com.example.FoodApp.reviews.dto.ReviewDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
